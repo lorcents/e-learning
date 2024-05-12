@@ -1,0 +1,58 @@
+<div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+  <!-- Collections Card -->
+  <app-card
+    title="Collections"
+    [value]="1000"
+    trendIcon="↑"
+    trendPercentage="15%"
+    [isPositiveTrend]="true"
+  ></app-card>
+
+  <!-- Sign-ups Card -->
+  <app-card
+    title="Sign-ups"
+    [value]="500"
+    trendIcon="↓"
+    trendPercentage="5%"
+    [isPositiveTrend]="false"
+  ></app-card>
+
+  <!-- Total Revenue Card -->
+  <app-card
+    title="Total Revenue"
+    [value]="10000"
+    trendIcon="↑"
+    trendPercentage="25%"
+    [isPositiveTrend]="true"
+  ></app-card>
+
+  <!-- Bounced Cheques Card -->
+  <app-card
+    title="Bounced Cheques"
+    [value]="500"
+    trendIcon="↑"
+    trendPercentage="10%"
+    [isPositiveTrend]="false"
+  ></app-card>
+
+</div>
+<div class="flex justify-center mt-8">
+  <mat-form-field appearance="fill" class="w-full max-w-md">
+    <mat-label>Select Zeraki's products</mat-label>
+    <mat-select [(ngModel)]="selectedDashboard" (selectionChange)="updateCharts()">
+      <mat-option value="analytics">Zeraki Analytics</mat-option>
+      <mat-option value="finance">Zeraki Finance</mat-option>
+      <mat-option value="timetable">Zeraki Timetable</mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
+
+
+<div class="flex justify-center mt-8">
+  <div class="w-full md:w-1/2 mx-4">
+    <app-pie-chart></app-pie-chart>
+  </div>
+  <div class="w-full md:w-1/2 mx-4">
+    <app-pie-chart></app-pie-chart>
+  </div>
+</div>

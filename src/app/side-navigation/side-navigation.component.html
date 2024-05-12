@@ -1,0 +1,96 @@
+<mat-sidenav-container class="h-screen flex flex-col">
+  <!-- Sidenav -->
+  <mat-sidenav
+    #sidenav
+    mode="side"
+    class="bg-gray-800 text-white"
+    fixedTopGap="56"
+  >
+    <!-- Navigation items -->
+    <mat-nav-list>
+      <!-- Home -->
+      <mat-list-item
+        [routerLink]="['/home/dashboard']"
+        routerLinkActive="active-link"
+      >
+        <mat-icon class="mr-2">home</mat-icon> Home
+      </mat-list-item>
+      <!-- Home Submenu -->
+      <div class="ml-4">
+        <mat-list-item
+          [routerLink]="['/home/dashboard']"
+          routerLinkActive="active-link"
+        >
+          <mat-icon class="mr-2">dashboard</mat-icon> Dashboard
+        </mat-list-item>
+        <mat-list-item
+          [routerLink]="['/home/notifications']"
+          routerLinkActive="active-link"
+        >
+          <mat-icon class="mr-2">notifications</mat-icon> Notifications
+        </mat-list-item>
+      </div>
+      <!-- School -->
+      <mat-list-item [routerLink]="['/school']" routerLinkActive="active-link">
+        <mat-icon class="mr-2">school</mat-icon> School
+      </mat-list-item>
+      <!-- School Submenu -->
+      <div class="ml-4">
+        <mat-list-item
+          [routerLink]="['/school/invoices']"
+          routerLinkActive="active-link"
+        >
+          <mat-icon class="mr-2">attach_money</mat-icon> Invoices
+        </mat-list-item>
+        <mat-list-item
+          [routerLink]="['/school/collections']"
+          routerLinkActive="active-link"
+        >
+          <mat-icon class="mr-2">collections</mat-icon> Collection
+        </mat-list-item>
+      </div>
+    </mat-nav-list>
+
+    <!-- Bottom section -->
+    <div class=" px-4 py-2  fixed bottom-0 left-0 z-10">
+        <!-- Avatar -->
+      <div class="flex items-center">
+        <img
+          src="https://avatar.iran.liara.run/public"
+          alt="Avatar"
+          class="w-12 h-12 rounded-full mr-2"
+        />
+        <span>User Name</span>
+      </div>
+      <!-- Settings button -->
+      <button class="px-4 py-2 " color="primary" (click)="openSettings()">
+        <mat-icon>settings</mat-icon> 
+      </button>
+
+      <!-- Logout button -->
+      <button class="px-4 py-2 " mat-icon-button color="warn" (click)="logout()">
+        <mat-icon>exit_to_app</mat-icon>
+      </button>
+    </div>
+  </mat-sidenav>
+
+  <!-- Main content area -->
+  <mat-sidenav-content>
+    <!-- Toolbar -->
+    <mat-toolbar color="primary">
+      <button mat-icon-button (click)="sidenav.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <div class="flex-grow"></div>
+      <!-- Flex grow to push content to the center -->
+      <span class="text-center">E-learning Dashboard</span>
+      <div class="flex-grow"></div>
+    </mat-toolbar>
+
+    <!-- Content -->
+    <div class="p-4">
+      <!-- Router Outlet for dynamic content -->
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

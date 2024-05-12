@@ -1,0 +1,9 @@
+.card:hover .hidden {
+    display: block;
+  }
+  
+  .expanded {
+    z-index: 1;
+  }
+  
+  

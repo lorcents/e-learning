@@ -1,0 +1,33 @@
+<div class="bg-white p-4 shadow-md rounded-lg flex items-center justify-between md:w-56"
+  [ngClass]="{'expanded': isExpanded}"
+  (mouseenter)="isExpanded = true"
+  (mouseleave)="isExpanded = false">
+  <div>
+    <h3 class="text-lg font-semibold mb-2">{{ title }}</h3>
+    <div class="text-3xl font-bold mb-1">{{ value }}</div>
+    <div class="expanded-details" *ngIf="isExpanded">
+      <!-- Details here -->
+      <div class="flex justify-between items-center mb-2">
+        <div>Zeraki Analytics</div>
+        <div class="text-sm text-gray-500">30%</div>
+      </div>
+      <div class="flex justify-between items-center mb-2">
+        <div>Zeraki Finance</div>
+        <div class="text-sm text-gray-500">50%</div>
+      </div>
+      <div class="flex justify-between items-center">
+        <div>Zeraki Timetable</div>
+        <div class="text-sm text-gray-500">20%</div>
+      </div>
+    </div>
+  </div>
+  <div class="relative flex items-center">
+    <div class="w-12 h-8 rounded-full border border-gray-300 flex items-center justify-center bg-blue-100">
+      <span [class]="isPositiveTrend ? 'text-green-500' : 'text-red-500'">{{ trendIcon }}</span>
+      <span [class]="isPositiveTrend ? 'text-sm text-green-500' : 'text-sm text-red-500'">{{ trendPercentage }}</span>
+    </div>
+  </div>
+</div>
+
+
+  
