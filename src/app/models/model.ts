@@ -1,6 +1,6 @@
 
   export interface School {
-    id: number;
+    id: string;
     name: string;
     type: string;
     product: string; 
@@ -11,16 +11,28 @@
   }
   
   export interface Invoice {
-    id: number;
+    id: string;
     invoiceNumber: string;
     invoiceItem: string;
-    creationDate: Date;
+    creationDate: string;
     dueDate: string;
     amountDue: number;
     paidAmount: number;
     balance: number;
     completionStatus: string; // 'Completed' or 'Pending'
     daysUntilDue: number;
-    schoolName: string;
-    schoolId:number
+    schoolId:string
+  }
+
+  export interface createINV {
+    invoiceNumber: string;
+    invoiceItem: string;
+    creationDate: string;
+    dueDate: string;
+    amountDue: number;
+    paidAmount: number;
+    balance: number;
+    completionStatus: string; // 'Completed' or 'Pending'
+    daysUntilDue: number;
+    schoolId:string
   }

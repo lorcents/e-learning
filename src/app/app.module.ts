@@ -24,6 +24,7 @@ import { UpcomingInvoicesComponent } from './components/upcoming-invoices/upcomi
 import { DatePipe } from '@angular/common';
 import { ServicesService } from './services/service.service';
 import { PaymentModalComponent } from './components/payment-modal/payment-modal.component';
+import { InvoiceModalComponent } from './components/invoice-modal/invoice-modal.component';
 
 
 
@@ -31,6 +32,11 @@ import { MatListModule } from '@angular/material/list';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { CommonModule } from '@angular/common';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
 
 import { routes } from './app.routes';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
@@ -49,7 +55,8 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
     BarGraphComponent,
     PieChartComponent,
     UpcomingInvoicesComponent,
-    PaymentModalComponent
+    PaymentModalComponent,
+    InvoiceModalComponent
   ],
   imports: [
     BrowserModule,
@@ -62,8 +69,13 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
     FormsModule,
     MatSelectModule,
     ReactiveFormsModule,
+    MatInputModule,
+    MatFormFieldModule,
     BaseChartDirective,
     RouterModule.forRoot(routes),
+    CommonModule,
+    BrowserAnimationsModule, // required animations module
+    ToastrModule.forRoot(),
   ],
   providers: [provideAnimationsAsync(), provideCharts(withDefaultRegisterables()),DatePipe,ServicesService],
   bootstrap: [AppComponent],

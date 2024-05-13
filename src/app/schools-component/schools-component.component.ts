@@ -23,13 +23,13 @@ export class SchoolsComponentComponent  implements OnInit {
     });
   }
 
-  viewSchoolDetails(schoolId: number): void {
+  viewSchoolDetails(schoolId: string): void {
     this.router.navigate(['/school-details', schoolId]);
   }
   exportSchools(){
 
   }
   addSchool(){
-    
+
   }
 }

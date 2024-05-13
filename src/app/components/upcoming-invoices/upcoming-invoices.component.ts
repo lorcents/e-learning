@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ServicesService } from '../../services/service.service';
-import { Invoice } from '../../models/model';
+import { Invoice, School } from '../../models/model';
 import { MatDialog } from '@angular/material/dialog';
 import { PaymentModalComponent } from '../payment-modal/payment-modal.component';
 
@@ -11,21 +11,34 @@ import { PaymentModalComponent } from '../payment-modal/payment-modal.component'
 })
 export class UpcomingInvoicesComponent implements OnInit {
   upcomingInvoices: Invoice[] = [];
+  schools:School[]=[]
 
   constructor(private serviceService: ServicesService,private dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.fetchUpcomingInvoices();
+    this.fetchSchool()
   }
 
   fetchUpcomingInvoices() {
     this.serviceService.getUpcomingInvoices().subscribe((invoices: Invoice[]) => {
-      this.upcomingInvoices = invoices;
+      this.upcomingInvoices = invoices.slice(0, 5);
     });
   }
 
+  fetchSchool(){
+    this.serviceService.getSchools().subscribe((school: School[]) => {
+      this.schools = school;
+    });
+  }
 
-  openPaymentModal(invoiceId: number, amount: number): void {
+  getSchoolName(id:string){
+    const foundSchool = this.schools.find(school => school.id == id);
+    return foundSchool ? foundSchool.name : 'undefined';
+  }
+
+
+  openPaymentModal(invoiceId: string, amount: number): void {
     const dialogRef = this.dialog.open(PaymentModalComponent, {
       width: '500px', // Adjust width and other properties as needed
       data: { invoiceId: invoiceId, amount: amount } // Pass data to the modal

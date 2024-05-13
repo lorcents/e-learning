@@ -12,7 +12,7 @@
         </thead>
         <tbody>
           <tr *ngFor="let invoice of upcomingInvoices">
-            <td class="border px-4 py-2">{{ invoice.schoolName }}</td>
+            <td class="border px-4 py-2">{{ getSchoolName(invoice.schoolId) }}</td>
             <td class="border px-4 py-2">{{ invoice.amountDue }}</td>
             <td class="border px-4 py-2">{{ invoice.dueDate | date }}</td>
             <td class="border px-4 py-2">

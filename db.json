@@ -1,7 +1,7 @@
 {
   "schools": [
     {
-      "id": 1,
+      "id": "1",
       "name": "ABC School",
       "type": "Primary",
       "product": "Zeraki Analytics",
@@ -11,7 +11,7 @@
       "balance": 5000
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "XYZ Academy",
       "type": "Secondary",
       "product": "Zeraki Finance",
@@ -21,7 +21,7 @@
       "balance": 7500
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "123 Institute",
       "type": "IGCSE",
       "product": "Zeraki Timetable",
@@ -31,7 +31,7 @@
       "balance": 3000
     },
     {
-      "id": 4,
+      "id": "4",
       "name": "BMW Academy",
       "type": "Primary",
       "product": "Zeraki Analytics",
@@ -41,7 +41,7 @@
       "balance": 2000
     },
     {
-      "id": 5,
+      "id": "5",
       "name": "KBC Institute",
       "type": "Secondary",
       "product": "Zeraki Finance",
@@ -53,7 +53,7 @@
   ],
   "invoices": [
     {
-      "id": 1,
+      "id": "1",
       "invoiceNumber": "INV001",
       "invoiceItem": "Zeraki Analytics",
       "creationDate": "2024-06-01",
@@ -63,11 +63,10 @@
       "balance": 500,
       "completionStatus": "Pending",
       "daysUntilDue": 10,
-      "schoolName": "ABC School",
-      "schoolId": 1
+      "schoolId": "1"
     },
     {
-      "id": 2,
+      "id": "2",
       "invoiceNumber": "INV002",
       "invoiceItem": "Zeraki Finance",
       "creationDate": "2024-06-05",
@@ -77,11 +76,10 @@
       "balance": 750,
       "completionStatus": "Pending",
       "daysUntilDue": 15,
-      "schoolName": "XYZ Academy",
-      "schoolId": 2
+      "schoolId": "2"
     },
     {
-      "id": 3,
+      "id": "3",
       "invoiceNumber": "INV003",
       "invoiceItem": "Zeraki Timetable",
       "creationDate": "2024-06-10",
@@ -91,11 +89,10 @@
       "balance": 1000,
       "completionStatus": "Pending",
       "daysUntilDue": 20,
-      "schoolName": "123 Institute",
-      "schoolId": 3
+      "schoolId": "3"
     },
     {
-      "id": 4,
+      "id": "4",
       "invoiceNumber": "INV004",
       "invoiceItem": "Zeraki Analytics",
       "creationDate": "2024-06-05",
@@ -105,11 +102,10 @@
       "balance": 100,
       "completionStatus": "Pending",
       "daysUntilDue": 15,
-      "schoolName": "BMW Academy",
-      "schoolId": 4
+      "schoolId": "4"
     },
     {
-      "id": 5,
+      "id": "5",
       "invoiceNumber": "INV005",
       "invoiceItem": "Zeraki Finance",
       "creationDate": "2024-06-10",
@@ -119,8 +115,44 @@
       "balance": 1000,
       "completionStatus": "Pending",
       "daysUntilDue": 20,
-      "schoolName": "KBC Institute",
-      "schoolId": 5
+      "schoolId": "5"
+    },
+    {
+      "id": "bc4f",
+      "invoiceNumber": "GHCKC",
+      "invoiceItem": "Zeraki Analytics",
+      "creationDate": "2024-05-13",
+      "dueDate": "2024-06-20",
+      "amountDue": 677,
+      "paidAmount": 0,
+      "balance": 677,
+      "completionStatus": "pending",
+      "daysUntilDue": 38
+    },
+    {
+      "id": "9ac0",
+      "invoiceNumber": "LHHKY",
+      "invoiceItem": "Zeraki Analytics",
+      "creationDate": "2024-05-13",
+      "dueDate": "2024-06-20",
+      "amountDue": 677,
+      "paidAmount": 0,
+      "balance": 677,
+      "completionStatus": "pending",
+      "daysUntilDue": 38
+    },
+    {
+      "id": "e915",
+      "invoiceNumber": "YHXBV",
+      "invoiceItem": "Zeraki Analytics",
+      "creationDate": "2024-05-13",
+      "dueDate": "2024-07-21",
+      "amountDue": 500,
+      "paidAmount": 0,
+      "balance": 500,
+      "completionStatus": "pending",
+      "daysUntilDue": 69,
+      "schoolId": "3"
     }
   ]
 }
