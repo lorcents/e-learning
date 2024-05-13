@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-side-navigation',
@@ -9,7 +10,7 @@ export class SideNavigationComponent {
   isHomeActive: boolean = false;
   isSchoolActive: boolean = false;
 
-  constructor() { }
+  constructor(private toastr: ToastrService) { }
 
   toggleHomeActive() {
     this.isHomeActive = !this.isHomeActive;
@@ -19,9 +20,11 @@ export class SideNavigationComponent {
     this.isSchoolActive = !this.isSchoolActive;
   }
   logout(){
+    this.toastr.info('Upcoming feature')
 
   }
   openSettings(){
+    this.toastr.info('Upcoming feature')
     
   }
 }

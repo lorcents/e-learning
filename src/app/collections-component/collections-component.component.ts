@@ -73,7 +73,7 @@ export class CollectionsComponentComponent implements OnInit {
   }
   
   exportInvoices(){
-    this.toastr.success('Hey', 'Upcoming feature');
+    this.toastr.info('Upcoming feature')
 
   }
   

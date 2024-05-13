@@ -3,7 +3,7 @@
   <!-- Collections Card -->
   <app-card
     title="Collections"
-    [value]="1000"
+    [value]="collectionCont"
     trendIcon="↑"
     trendPercentage="15%"
     [isPositiveTrend]="true"
@@ -12,7 +12,7 @@
   <!-- Sign-ups Card -->
   <app-card
     title="Sign-ups"
-    [value]="500"
+    [value]="schoolCount"
     trendIcon="↓"
     trendPercentage="5%"
     [isPositiveTrend]="false"
@@ -21,7 +21,7 @@
   <!-- Total Revenue Card -->
   <app-card
     title="Total Revenue"
-    [value]="10000"
+    [value]="totalRevenue"
     trendIcon="↑"
     trendPercentage="25%"
     [isPositiveTrend]="true"
@@ -30,10 +30,10 @@
   <!-- Bounced Cheques Card -->
   <app-card
     title="Bounced Cheques"
-    [value]="500"
+    [value]="bouncedCheque"
     trendIcon="↑"
     trendPercentage="10%"
-    [isPositiveTrend]="false"
+    [isPositiveTrend]="true"
   ></app-card>
 
 </div>
@@ -49,7 +49,7 @@
         </mat-select>
       </mat-form-field>
     </div>
-    <app-pie-chart></app-pie-chart>
+    <app-pie-chart [pieChartData]="pieChartData"></app-pie-chart>
     <app-bar-graph></app-bar-graph>
   </div>
   <div class="w-full md:w-1/2 mx-4">
