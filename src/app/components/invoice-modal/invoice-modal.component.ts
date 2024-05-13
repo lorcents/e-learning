@@ -2,7 +2,7 @@ import { Component, Inject, OnInit } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ServicesService } from '../../services/service.service';
-import { School } from '../../models/model';
+import { Invoice, School } from '../../models/model';
 
 @Component({
   selector: 'app-invoice-modal',
@@ -13,6 +13,8 @@ export class InvoiceModalComponent implements OnInit {
   invoiceForm: FormGroup;
   invoiceItems = ['Zeraki Analytics', 'Zeraki Finance', 'Zeraki Timetable'];
   schools: School[] = [];
+  invoices:Invoice[]=[];
+  isEditing=false
 
   constructor(
     public dialogRef: MatDialogRef<InvoiceModalComponent>,
@@ -26,11 +28,16 @@ export class InvoiceModalComponent implements OnInit {
       amountDue: ['', Validators.required],
       schoolId:['', Validators.required]
     });
+    
   }
   ngOnInit(): void {
     this.servicesservice.getSchools().subscribe((schools: School[]) => {
       this.schools = schools;
     });
+    this.servicesservice.getUpcomingInvoices().subscribe((inv: Invoice[]) => {
+      this.invoices = inv;
+    });
+
   }
 
   onSubmit() {
@@ -76,7 +83,7 @@ export class InvoiceModalComponent implements OnInit {
     return `${year}-${month}-${day}`;
   }
 
-  // Helper function to generate random string of given length
+  
   private generateRandomString(length: number): string {
     const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
     let result = '';

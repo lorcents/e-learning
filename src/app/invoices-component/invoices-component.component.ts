@@ -70,8 +70,8 @@ export class InvoicesComponentComponent implements OnInit {
       width: '500px',
       data: {
         initialValues: {
-          invoiceItem: 'Zeraki Analytics',
-          dueDate: '2024-06-20',
+          invoiceItem: '',
+          dueDate: '',
           amountDue: '',
         },
       },
@@ -79,7 +79,7 @@ export class InvoicesComponentComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
-        console.log('Form data:', result); // Handle form submission here
+       this.loadInvoices()
       }
     });
   }
