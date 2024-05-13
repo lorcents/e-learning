@@ -1,1 +1,82 @@
-<p>schools-component works!</p>
+<div class="p-4">
+  <div class="flex justify-between items-center mb-4">
+    <h2 class="text-2xl font-bold">All Schools</h2>
+    <div class="flex space-x-4">
+        <button mat-icon-button aria-label="Add School" (click)="addSchool()"
+          class="border border-gray-300 shadow-md hover:shadow-lg px-4 py-2 rounded-md">
+          <mat-icon class="text-green-500">add</mat-icon>
+        </button>
+        <button mat-icon-button aria-label="Export" (click)="exportSchools()"
+          class="flex items-center border border-gray-300 shadow-md hover:shadow-lg px-4 py-2 rounded-md">
+          <mat-icon class="text-blue-500 mr-2">cloud_upload</mat-icon>
+          <span class="text-sm">Export</span>
+        </button>
+      </div>
+      
+  </div>
+  <table class="min-w-full divide-y divide-gray-200">
+    <thead class="bg-gray-50">
+      <tr>
+        <th
+          scope="col"
+          class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+        >
+          Name
+        </th>
+        <th
+          scope="col"
+          class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+        >
+          Type
+        </th>
+        <th
+          scope="col"
+          class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+        >
+          Product
+        </th>
+        <th
+          scope="col"
+          class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+        >
+          County
+        </th>
+        <th
+          scope="col"
+          class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+        >
+          Registration Date
+        </th>
+        <th
+          scope="col"
+          class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+        >
+          Contact Info
+        </th>
+        <th
+          scope="col"
+          class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+        >
+          Balance
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr
+        *ngFor="let school of schools"
+        (click)="viewSchoolDetails(school.id)"
+        class="cursor-pointer hover:bg-gray-100"
+      >
+        <td class="px-6 py-4 whitespace-nowrap">{{ school.name }}</td>
+        <td class="px-6 py-4 whitespace-nowrap">{{ school.type }}</td>
+        <td class="px-6 py-4 whitespace-nowrap">{{ school.product }}</td>
+        <td class="px-6 py-4 whitespace-nowrap">{{ school.county }}</td>
+        <td class="px-6 py-4 whitespace-nowrap">
+          {{ school.registrationDate }}
+        </td>
+        <td class="px-6 py-4 whitespace-nowrap">{{ school.contactInfo }}</td>
+        <td class="px-6 py-4 whitespace-nowrap">{{ school.balance }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

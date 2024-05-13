@@ -1,0 +1,126 @@
+{
+  "schools": [
+    {
+      "id": 1,
+      "name": "ABC School",
+      "type": "Primary",
+      "product": "Zeraki Analytics",
+      "county": "Nairobi",
+      "registrationDate": "2022-01-01",
+      "contactInfo": "123-456-7890",
+      "balance": 5000
+    },
+    {
+      "id": 2,
+      "name": "XYZ Academy",
+      "type": "Secondary",
+      "product": "Zeraki Finance",
+      "county": "Mombasa",
+      "registrationDate": "2022-03-15",
+      "contactInfo": "456-789-0123",
+      "balance": 7500
+    },
+    {
+      "id": 3,
+      "name": "123 Institute",
+      "type": "IGCSE",
+      "product": "Zeraki Timetable",
+      "county": "Eldoret",
+      "registrationDate": "2022-05-20",
+      "contactInfo": "789-012-3456",
+      "balance": 3000
+    },
+    {
+      "id": 4,
+      "name": "BMW Academy",
+      "type": "Primary",
+      "product": "Zeraki Analytics",
+      "county": "Nairobi",
+      "registrationDate": "2022-02-10",
+      "contactInfo": "012-345-6789",
+      "balance": 2000
+    },
+    {
+      "id": 5,
+      "name": "KBC Institute",
+      "type": "Secondary",
+      "product": "Zeraki Finance",
+      "county": "Kisumu",
+      "registrationDate": "2022-04-05",
+      "contactInfo": "345-678-9012",
+      "balance": 4500
+    }
+  ],
+  "invoices": [
+    {
+      "id": 1,
+      "invoiceNumber": "INV001",
+      "invoiceItem": "Zeraki Analytics",
+      "creationDate": "2024-06-01",
+      "dueDate": "2024-06-15",
+      "amountDue": 500,
+      "paidAmount": 0,
+      "balance": 500,
+      "completionStatus": "Pending",
+      "daysUntilDue": 10,
+      "schoolName": "ABC School",
+      "schoolId": 1
+    },
+    {
+      "id": 2,
+      "invoiceNumber": "INV002",
+      "invoiceItem": "Zeraki Finance",
+      "creationDate": "2024-06-05",
+      "dueDate": "2024-06-20",
+      "amountDue": 750,
+      "paidAmount": 0,
+      "balance": 750,
+      "completionStatus": "Pending",
+      "daysUntilDue": 15,
+      "schoolName": "XYZ Academy",
+      "schoolId": 2
+    },
+    {
+      "id": 3,
+      "invoiceNumber": "INV003",
+      "invoiceItem": "Zeraki Timetable",
+      "creationDate": "2024-06-10",
+      "dueDate": "2024-06-25",
+      "amountDue": 1000,
+      "paidAmount": 0,
+      "balance": 1000,
+      "completionStatus": "Pending",
+      "daysUntilDue": 20,
+      "schoolName": "123 Institute",
+      "schoolId": 3
+    },
+    {
+      "id": 4,
+      "invoiceNumber": "INV004",
+      "invoiceItem": "Zeraki Analytics",
+      "creationDate": "2024-06-05",
+      "dueDate": "2024-06-20",
+      "amountDue": 100,
+      "paidAmount": 0,
+      "balance": 100,
+      "completionStatus": "Pending",
+      "daysUntilDue": 15,
+      "schoolName": "BMW Academy",
+      "schoolId": 4
+    },
+    {
+      "id": 5,
+      "invoiceNumber": "INV005",
+      "invoiceItem": "Zeraki Finance",
+      "creationDate": "2024-06-10",
+      "dueDate": "2024-06-25",
+      "amountDue": 1000,
+      "paidAmount": 0,
+      "balance": 1000,
+      "completionStatus": "Pending",
+      "daysUntilDue": 20,
+      "schoolName": "KBC Institute",
+      "schoolId": 5
+    }
+  ]
+}

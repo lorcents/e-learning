@@ -1,0 +1,30 @@
+<div class="p-4">
+    <h2 class="text-xl font-semibold mb-4">Collect Payment</h2>
+    <form [formGroup]="paymentForm" (ngSubmit)="onSubmit()" class="space-y-4">
+      <!-- Amount Input -->
+      <div class="flex flex-col">
+        <label for="amount" class="text-sm">Amount</label>
+        <input id="amount" type="text" formControlName="amount" placeholder="Enter amount"
+          value="{{ data.amount }}" 
+          class="mt-1 px-4 py-2 border border-gray-300 rounded-md bg-gray-100 focus:outline-none focus:ring focus:ring-blue-500 focus:border-blue-500">
+      </div>
+  
+      <!-- Payment Method Input -->
+      <div class="flex flex-col">
+        <label for="paymentMethod" class="text-sm">Payment Method</label>
+        <input id="paymentMethod" type="text" formControlName="paymentMethod" placeholder="Enter payment method"
+          class="mt-1 px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-blue-500 focus:border-blue-500">
+      </div>
+  
+      <!-- Add more form fields as needed -->
+  
+      <!-- Button Group -->
+      <div class="flex justify-end">
+        <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+          [disabled]="paymentForm.invalid">Submit</button>
+        <button type="button" class="bg-gray-400 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded ml-2"
+          (click)="onCancel()">Cancel</button>
+      </div>
+    </form>
+  </div>
+  

@@ -31,11 +31,17 @@
         </mat-list-item>
       </div>
       <!-- School -->
-      <mat-list-item [routerLink]="['/school']" routerLinkActive="active-link">
+      <mat-list-item [routerLink]="['/school/schools']" routerLinkActive="active-link">
         <mat-icon class="mr-2">school</mat-icon> School
       </mat-list-item>
       <!-- School Submenu -->
       <div class="ml-4">
+        <mat-list-item
+          [routerLink]="['/school/schools']"
+          routerLinkActive="active-link"
+        >
+          <mat-icon class="mr-2">school</mat-icon> Schools
+        </mat-list-item>
         <mat-list-item
           [routerLink]="['/school/invoices']"
           routerLinkActive="active-link"

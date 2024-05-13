@@ -4,6 +4,9 @@ import { RouterModule } from '@angular/router'; // Import RouterModule
 import { FormsModule } from '@angular/forms';
 import {BaseChartDirective, provideCharts, withDefaultRegisterables} from 'ng2-charts';
 import { MatSelectModule } from '@angular/material/select';
+import { HttpClientModule } from '@angular/common/http';
+import { MatDialogModule } from '@angular/material/dialog';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { SideNavigationComponent } from './side-navigation/side-navigation.component'; // Assuming you have a SideNavigationComponent
@@ -17,7 +20,10 @@ import { CollectionsComponentComponent } from './collections-component/collectio
 import { CardComponent } from './card/card.component';
 import { PieChartComponent } from './pie-chart/pie-chart.component';
 import { BarGraphComponent } from './bar-graph/bar-graph.component';
-
+import { UpcomingInvoicesComponent } from './components/upcoming-invoices/upcoming-invoices.component';
+import { DatePipe } from '@angular/common';
+import { ServicesService } from './services/service.service';
+import { PaymentModalComponent } from './components/payment-modal/payment-modal.component';
 
 
 
@@ -41,20 +47,25 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
     CollectionsComponentComponent,
     CardComponent,
     BarGraphComponent,
-    PieChartComponent
+    PieChartComponent,
+    UpcomingInvoicesComponent,
+    PaymentModalComponent
   ],
   imports: [
     BrowserModule,
     MatListModule,
     MatSidenavModule,
     MatToolbarModule,
+    HttpClientModule,
     MatIconModule,
+    MatDialogModule,
     FormsModule,
     MatSelectModule,
+    ReactiveFormsModule,
     BaseChartDirective,
     RouterModule.forRoot(routes),
   ],
-  providers: [provideAnimationsAsync(), provideCharts(withDefaultRegisterables())],
+  providers: [provideAnimationsAsync(), provideCharts(withDefaultRegisterables()),DatePipe,ServicesService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

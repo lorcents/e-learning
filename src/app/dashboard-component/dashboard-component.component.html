@@ -1,3 +1,4 @@
+<div class="p-2">
 <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
   <!-- Collections Card -->
   <app-card
@@ -37,22 +38,22 @@
 
 </div>
 <div class="flex justify-center mt-8">
-  <mat-form-field appearance="fill" class="w-full max-w-md">
-    <mat-label>Select Zeraki's products</mat-label>
-    <mat-select [(ngModel)]="selectedDashboard" (selectionChange)="updateCharts()">
-      <mat-option value="analytics">Zeraki Analytics</mat-option>
-      <mat-option value="finance">Zeraki Finance</mat-option>
-      <mat-option value="timetable">Zeraki Timetable</mat-option>
-    </mat-select>
-  </mat-form-field>
+  <div class="w-full md:w-1/2 mx-4">
+    <div class="flex mt-8">
+      <mat-form-field appearance="fill" class="w-full max-w-md">
+        <mat-label>Select Zeraki's products</mat-label>
+        <mat-select [(ngModel)]="selectedDashboard" (selectionChange)="updateCharts()">
+          <mat-option value="analytics">Zeraki Analytics</mat-option>
+          <mat-option value="finance">Zeraki Finance</mat-option>
+          <mat-option value="timetable">Zeraki Timetable</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <app-pie-chart></app-pie-chart>
+    <app-bar-graph></app-bar-graph>
+  </div>
+  <div class="w-full md:w-1/2 mx-4">
+    <app-upcoming-invoices></app-upcoming-invoices>
+  </div>
 </div>
-
-
-<div class="flex justify-center mt-8">
-  <div class="w-full md:w-1/2 mx-4">
-    <app-pie-chart></app-pie-chart>
-  </div>
-  <div class="w-full md:w-1/2 mx-4">
-    <app-pie-chart></app-pie-chart>
-  </div>
 </div>
