@@ -52,7 +52,7 @@ export class InvoicesComponentComponent implements OnInit {
   }
 
   editInvoice(invoiceId: string) {
-    // Implement edit logic
+    this.toastr.info('Upcoming feature')
   }
 
   deleteInvoice(invoiceId: string) {
