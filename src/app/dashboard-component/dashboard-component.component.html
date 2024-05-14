@@ -1,59 +1,59 @@
 <div class="p-2">
-<div class="grid grid-cols-1 md:grid-cols-4 gap-4">
-  <!-- Collections Card -->
-  <app-card
-    title="Collections"
-    [value]="collectionCont"
-    trendIcon="↑"
-    trendPercentage="15%"
-    [isPositiveTrend]="true"
-  ></app-card>
+  <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+    <!-- Collections Card -->
+    <app-card
+      title="Collections"
+      [value]="collectionCont"
+      trendIcon="↑"
+      trendPercentage="15%"
+      [isPositiveTrend]="true"
+    ></app-card>
 
-  <!-- Sign-ups Card -->
-  <app-card
-    title="Sign-ups"
-    [value]="schoolCount"
-    trendIcon="↓"
-    trendPercentage="5%"
-    [isPositiveTrend]="false"
-  ></app-card>
+    <!-- Sign-ups Card -->
+    <app-card
+      title="Sign-ups"
+      [value]="schoolCount"
+      trendIcon="↓"
+      trendPercentage="5%"
+      [isPositiveTrend]="false"
+    ></app-card>
 
-  <!-- Total Revenue Card -->
-  <app-card
-    title="Total Revenue"
-    [value]="totalRevenue"
-    trendIcon="↑"
-    trendPercentage="25%"
-    [isPositiveTrend]="true"
-  ></app-card>
+    <!-- Total Revenue Card -->
+    <app-card
+      title="Total Revenue"
+      [value]="totalRevenue"
+      trendIcon="↑"
+      trendPercentage="25%"
+      [isPositiveTrend]="true"
+    ></app-card>
 
-  <!-- Bounced Cheques Card -->
-  <app-card
-    title="Bounced Cheques"
-    [value]="bouncedCheque"
-    trendIcon="↑"
-    trendPercentage="10%"
-    [isPositiveTrend]="true"
-  ></app-card>
+    <!-- Bounced Cheques Card -->
+    <app-card
+      title="Bounced Cheques"
+      [value]="bouncedCheque"
+      trendIcon="↑"
+      trendPercentage="10%"
+      [isPositiveTrend]="true"
+    ></app-card>
+  </div>
 
-</div>
-<div class="flex justify-center mt-8">
-  <div class="w-full md:w-1/2 mx-4">
-    <div class="flex mt-8">
-      <mat-form-field appearance="fill" class="w-full max-w-md">
-        <mat-label>Select Zeraki's products</mat-label>
-        <mat-select [(ngModel)]="selectedDashboard" (selectionChange)="updateCharts()">
-          <mat-option value="analytics">Zeraki Analytics</mat-option>
-          <mat-option value="finance">Zeraki Finance</mat-option>
-          <mat-option value="timetable">Zeraki Timetable</mat-option>
-        </mat-select>
-      </mat-form-field>
+  <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-4">
+    <div class="mb-4 md:mb-0">
+      <div class="flex mt-8">
+        <mat-form-field appearance="fill" class="w-full max-w-md">
+          <mat-label>Select Zeraki's products</mat-label>
+          <mat-select [(ngModel)]="selectedDashboard" (selectionChange)="updateCharts()">
+            <mat-option value="analytics">Zeraki Analytics</mat-option>
+            <mat-option value="finance">Zeraki Finance</mat-option>
+            <mat-option value="timetable">Zeraki Timetable</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <app-pie-chart [pieChartData]="pieChartData"></app-pie-chart>
+      <app-bar-graph></app-bar-graph>
     </div>
-    <app-pie-chart [pieChartData]="pieChartData"></app-pie-chart>
-    <app-bar-graph></app-bar-graph>
+    <div>
+      <app-upcoming-invoices></app-upcoming-invoices>
+    </div>
   </div>
-  <div class="w-full md:w-1/2 mx-4">
-    <app-upcoming-invoices></app-upcoming-invoices>
-  </div>
-</div>
 </div>

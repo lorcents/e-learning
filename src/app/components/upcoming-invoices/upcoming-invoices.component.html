@@ -1,31 +1,30 @@
-<div>
-    <h3 class="text-lg font-semibold mb-4">Upcoming Invoices</h3>
-    <div *ngIf="upcomingInvoices.length > 0; else noInvoices">
-      <table class="w-full border-collapse border border-gray-200">
-        <thead>
-          <tr class="bg-gray-100">
-            <th class="px-4 py-2">School Name</th>
-            <th class="px-4 py-2">Amount Due</th>
-            <th class="px-4 py-2">Due Date</th>
-            <th class="px-4 py-2">Actions</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let invoice of upcomingInvoices">
-            <td class="border px-4 py-2">{{ getSchoolName(invoice.schoolId) }}</td>
-            <td class="border px-4 py-2">{{ invoice.amountDue }}</td>
-            <td class="border px-4 py-2">{{ invoice.dueDate | date }}</td>
-            <td class="border px-4 py-2">
-              <button (click)="openPaymentModal(invoice.id,invoice.amountDue)" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-4 rounded">
-                Collect Payment
-              </button>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    <ng-template #noInvoices>
-      <p>No upcoming invoices.</p>
-    </ng-template>
+<div class="overflow-x-auto">
+  <h3 class="text-lg font-semibold mb-4">Upcoming Invoices</h3>
+  <div *ngIf="upcomingInvoices.length > 0; else noInvoices">
+    <table class="w-full table-auto border-collapse border border-gray-200">
+      <thead>
+        <tr class="bg-gray-100">
+          <th class="px-4 py-2">School Name</th>
+          <th class="px-4 py-2">Amount Due</th>
+          <th class="px-4 py-2">Due Date</th>
+          <th class="px-4 py-2">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let invoice of upcomingInvoices">
+          <td class="border px-4 py-2">{{ getSchoolName(invoice.schoolId) }}</td>
+          <td class="border px-4 py-2">{{ invoice.amountDue }}</td>
+          <td class="border px-4 py-2">{{ invoice.dueDate | date }}</td>
+          <td class="border px-4 py-2">
+            <button (click)="openPaymentModal(invoice.id,invoice.amountDue)" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-4 rounded">
+              Collect Payment
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
   </div>
-  
+  <ng-template #noInvoices>
+    <p>No upcoming invoices.</p>
+  </ng-template>
+</div>
